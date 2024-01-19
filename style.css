@@ -76,7 +76,8 @@ body {
 
 #currentWeatherImage {
     object-fit: cover;
-    height: 200px;
+    height: 180px;
+    width: 180px;
     margin-right: 5px;
 }
 

@@ -3,8 +3,9 @@ let icons = {
     "cloudy": "./icons/cloudy.png",
     "rain": "./icons/rain.png",
     "sun": "./icons/sun.png",
-    "partly-cloudy-day": "./icons/partlycloudly.png"
-
+    "Partially cloudy": "./icons/partlycloudly.png",
+    "partly-cloudy-night": "./icons/partlycloudynight.png",
+    "clear-night": "./icons/clear.png"
 }
 
 async function getDataCurrentWeather(currentLocation) {
@@ -25,7 +26,7 @@ async function searchLocation() {
     getWeatherAlert(currentLocation);
 }
 
-async function init(currentLocation) {
+async function init() {
     let weatherData = await getDataCurrentWeather("Bad Nauheim");
     let icon = weatherData["currentConditions"]['icon'];
     console.log(icon);
@@ -34,7 +35,7 @@ async function init(currentLocation) {
     currentCity.innerHTML = weatherData["address"];
     currentTemp.innerHTML = `${weatherData["currentConditions"]["temp"]} °`;
     changeIcon("Bad Nauheim");
-    getWeatherAlert(currentLocation);
+    getWeatherAlert("Bad Nauheim");
 }
 
 async function getWeatherAlert(currentLocation) {
@@ -46,18 +47,9 @@ async function getWeatherAlert(currentLocation) {
 
 async function changeIcon(currentLocation) {
     let weatherData = await getDataCurrentWeather(currentLocation);
-    let icon = weatherData["currentConditions"]['icon'];
+    let iconKey = weatherData["currentConditions"]['icon'];
+    console.log(iconKey)
     let currentWeatherImg = document.getElementById('currentWeatherImage');
-    if (icon == 'cloudy') {
-        currentWeatherImg.src = "./icons/cloudy.png"
-    }
-    if (icon == 'rain') {
-        currentWeatherImg.src = "./icons/rain.png"
-    }
-    if (icon == 'sun') {
-        currentWeatherImg.src = "./icons/sun.png"
-    }
-    if (icon === 'partly-cloudy-day') {
-        currentWeatherImg.src = "./icons/partlycloudly.png"
-    }
+    let defaultIcon = "./icons/sun.png";
+    currentWeatherImg.src = icons[iconKey] || defaultIcon;
 }
