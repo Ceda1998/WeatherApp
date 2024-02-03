@@ -94,6 +94,8 @@ form {
 }
 
 .futureWeather_container {
+    display: flex;
+    gap: 30px;
     width: 800px;
     height: 280px;
     background-color: white;
@@ -105,4 +107,25 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/* future Weather */
+
+
+
+#currentDay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+    gap: 20px;
+}
+
+#currentDate {
+    font-size: 18px;
+}
+
+#futureDegree {
+    font-size: 16px;
 }

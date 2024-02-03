@@ -8,6 +8,7 @@ let icons = {
     "clear-night": "./icons/clear.png"
 }
 
+
 async function getDataCurrentWeather(currentLocation) {
     let currentWeatherUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${currentLocation}?unitGroup=metric&key=R6D5PDKYPCX6WMJ3GWQUNCYK3&contentType=json`
     let response = await fetch(currentWeatherUrl);
@@ -24,6 +25,7 @@ async function searchLocation() {
     currentTemp.innerHTML = `${weatherData["currentConditions"]["temp"]} °`;
     changeIcon(currentLocation);
     getWeatherAlert(currentLocation);
+    getFutureWeatherData(currentLocation)
 }
 
 async function init() {
@@ -36,6 +38,7 @@ async function init() {
     currentTemp.innerHTML = `${weatherData["currentConditions"]["temp"]} °`;
     changeIcon("Bad Nauheim");
     getWeatherAlert("Bad Nauheim");
+    getFutureWeatherData("Bad Nauheim");
 }
 
 async function getWeatherAlert(currentLocation) {
@@ -52,4 +55,22 @@ async function changeIcon(currentLocation) {
     let currentWeatherImg = document.getElementById('currentWeatherImage');
     let defaultIcon = "./icons/sun.png";
     currentWeatherImg.src = icons[iconKey] || defaultIcon;
+}
+
+
+// weather Prediction:
+
+async function getFutureWeatherData(currentLocation) {
+let futureWeatherContainer = document.getElementById('futureWeather_container');
+let dateString = document.getElementById('currentDate');
+let tempString = document.getElementById('futureDegree');
+ let futureData = await getDataCurrentWeather(currentLocation);
+ futureWeatherContainer.innerHTML = '';
+ let days = futureData['days'];
+for (let i = 0; i < 7; i++) {
+    let currentDate = days[i]['datetime'];
+    const currentTemp = days[i]['temp'];
+    futureWeatherContainer.innerHTML += renderFutureWeather(currentDate, currentTemp);
+    
+}
 }
