@@ -62,8 +62,6 @@ async function changeIcon(currentLocation) {
 
 async function getFutureWeatherData(currentLocation) {
 let futureWeatherContainer = document.getElementById('futureWeather_container');
-let dateString = document.getElementById('currentDate');
-let tempString = document.getElementById('futureDegree');
  let futureData = await getDataCurrentWeather(currentLocation);
  futureWeatherContainer.innerHTML = '';
  let days = futureData['days'];
