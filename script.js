@@ -51,7 +51,6 @@ async function getWeatherAlert(currentLocation) {
 async function changeIcon(currentLocation) {
     let weatherData = await getDataCurrentWeather(currentLocation);
     let iconKey = weatherData["currentConditions"]['icon'];
-    console.log(iconKey)
     let currentWeatherImg = document.getElementById('currentWeatherImage');
     let defaultIcon = "./icons/sun.png";
     currentWeatherImg.src = icons[iconKey] || defaultIcon;
@@ -71,4 +70,13 @@ for (let i = 0; i < 7; i++) {
     futureWeatherContainer.innerHTML += renderFutureWeather(currentDate, currentTemp);
     
 }
+}
+
+async function changeFuturePredictionIcon(currentLocation) {
+    let futureData = await getDataCurrentWeather(currentLocation);
+    let dataForIcon = futureData['days'];
+    console.log(dataForIcon)
+    let currentWeatherImg = document.getElementById('futureWeatherImage');
+    let defaultIcon = "./icons/sun.png";
+    
 }
