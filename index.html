@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeatherApp</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fonts.css" />
     <script src="script.js"></script>
     <script src="render.js"></script>
-</head>
-<body onload="init()">
+  </head>
+  <body onload="init()">
     <div class="content_container">
-        <div class="weatherCard">
-            <div class="searchbar">
-                <form action="#" onsubmit="searchLocation()" id="searchbarForm">
-                <input type="search" id="searchField" placeholder="Search Location" required>
-                <button id="searchButton">Search</button>
-                </form>
-            </div>
-            <div class="currentStatusContainer">
-                <div class="weatherAndLocation">
-                    <div class="locationAndTemp">
-                        <h1 class="currentCity"></h1>
-                        <h1 class="currentTemp"></h1>
-                    </div>
-                    <img src="./icons/sun.png" alt="" id="currentWeatherImage">
-                </div>
-                <div class="currentWarnings_container">
-                    <h1>Weather Status:</h1>
-                    <h1 id="weatherAlert">
-
-                    </h1>
-                </div>
-            </div>
-           <div class="centerContainer">
-            <div class="futureWeather_container" id="futureWeather_container">
-                
-            </div>
-           </div> 
-            
-            
-           
+      <div class="weatherCard">
+        <div class="searchbar">
+          <form action="#" onsubmit="searchLocation()" id="searchbarForm">
+            <input
+              type="search"
+              id="searchField"
+              placeholder="Search Location"
+              required
+            />
+            <button id="searchButton">Search</button>
+          </form>
         </div>
+        <div class="currentStatusContainer">
+          <div class="weatherAndLocation">
+            <div class="locationAndTemp">
+              <h1 class="currentCity"></h1>
+              <h1 class="currentTemp"></h1>
+            </div>
+            <img src="./icons/sun.png" alt="" id="currentWeatherImage" />
+          </div>
+          <div class="currentWarnings_container">
+            <h1>Weather Status:</h1>
+            <h1 id="weatherAlert"></h1>
+          </div>
+        </div>
+        <div class="centerContainer">
+          <div
+            class="futureWeather_container"
+            id="futureWeather_container"
+          ></div>
+        </div>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>

@@ -1,134 +1,128 @@
 body {
-    margin: 0;
-    font-family: inter;
+  margin: 0;
+  font-family: inter;
 }
 
 .content_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #3166B0;
-    height: 100vh;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3166b0;
+  height: 100vh;
+  width: 100%;
 }
 
 .weatherCard {
-    display: flex;
-    flex-direction: column;
-    height: 600px;
-    width: 1000px;
-    background-color: #F5F5F5;
-    border: 1px solid black;
-    border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 1000px;
+  background-color: #f5f5f5;
+  border: 1px solid black;
+  border-radius: 14px;
 }
 
 .weatherAndLocation {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .searchbar {
-    display: flex;
-    justify-content: center;
-    gap: 0px;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  margin-top: 10px;
 }
 
 #searchField {
-    height: 50px;
-    width: 200px;
-    border-top-left-radius: 14px;
-    border-bottom-left-radius: 14px;
-    border: 1px solid white;
+  height: 50px;
+  width: 200px;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+  border: 1px solid white;
 }
 
 #searchButton {
-    height: 50px;
-    background-color: #3166B0;
-    width: 100px;
-    border-top-right-radius: 14px;
-    border-bottom-right-radius: 14px;
-    border: 1px solid white;
+  height: 50px;
+  background-color: #3166b0;
+  width: 100px;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border: 1px solid white;
 }
 
 #searchButton:hover {
-    cursor: pointer;
-    background-color: #4c77b3;
-    
+  cursor: pointer;
+  background-color: #4c77b3;
 }
 
 .currentStatusContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .currentWarnings_container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 33%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 33%;
 }
 
 .weatherAndLocation {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #currentWeatherImage {
-    object-fit: cover;
-    height: 180px;
-    width: 180px;
-    margin-right: 5px;
+  object-fit: cover;
+  height: 180px;
+  width: 180px;
+  margin-right: 5px;
 }
 
 form {
-    display: flex;
-    gap: 0px;
+  display: flex;
+  gap: 0px;
 }
 
-
 #weatherAlert {
-    font-size: 16px;
-    font-weight: 400;
-   
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .futureWeather_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    width: 800px;
-    height: 280px;
-    background-color: white;
-    border-radius: 14px;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 800px;
+  height: 280px;
+  background-color: white;
+  border-radius: 14px;
+  margin-top: 30px;
 }
 
 .centerContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 /* future Weather */
 
-
-
 #currentDay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-left: 5px;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: 5px;
+  gap: 20px;
 }
 
 #currentDate {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 #futureDegree {
-    font-size: 16px;
+  font-size: 16px;
 }
