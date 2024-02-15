@@ -1,4 +1,5 @@
 const API_KEY = "R6D5PDKYPCX6WMJ3GWQUNCYK3";
+let currentWeather = [];
 let icons = {
   cloudy: "./icons/cloudy.png",
   rain: "./icons/rain.png",
@@ -66,7 +67,7 @@ async function getFutureWeatherData(currentLocation) {
   let futureData = await getDataCurrentWeather(currentLocation);
   futureWeatherContainer.innerHTML = "";
   let days = futureData["days"];
-  for (let i = 0; i < 7; i++) {
+  for (let i = 1; i < 7; i++) {
     let currentDate = days[i]["datetime"];
     const currentTemp = days[i]["temp"];
     futureWeatherContainer.innerHTML += renderFutureWeather(
@@ -81,7 +82,7 @@ async function changeFuturePredictionIcon(currentLocation) {
   let dataForIcon = futureData["days"];
   let futureWeatherImgs = document.querySelectorAll(".futureWeatherImage");
 
-  for (let i = 0; i < 7; i++) {
+  for (let i = 1; i < 7; i++) {
     let futureWeatherImg = futureWeatherImgs[i];
     if (!futureWeatherImg) {
       futureWeatherImg = document.createElement("img");
@@ -93,3 +94,14 @@ async function changeFuturePredictionIcon(currentLocation) {
     futureWeatherImg.src = icons[iconElement] || defaultIcon;
   }
 }
+
+async function getWeatherDataDays(currentLocation) {
+  currentWeather = await getDataCurrentWeather(currentLocation);
+  
+  for (let i = 1; i < 7; i++) {
+    let currentWeatherDays = currentWeather['days'];
+    let getDays = currentWeatherDays[i]['datetime'];
+    let getDaysOfWeek = new Date(getDays);
+    let currentDay = getDaysOfWeek.getDay();
+  }
+} 
